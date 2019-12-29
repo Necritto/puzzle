@@ -1,0 +1,10 @@
+{
+  "name": "puzzle",
+  "version": "1.0.0",
+  "description": "Puzzle",
+  "main": "index.js",
+  "scripts": {},
+  "keywords": [],
+  "author": "Necritto",
+  "license": "ISC"
+}
