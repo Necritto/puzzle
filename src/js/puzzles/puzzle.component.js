@@ -13,7 +13,7 @@ export class PuzzleComponent extends BaseComponent {
   }
 
   _initLoadPage() {
-    this._load = new LoadComponent({ element: this._element.querySelector('.title') });
+    this._load = new LoadComponent({element: this._element});
   }
 
   _render() {
