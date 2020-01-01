@@ -14,6 +14,7 @@ export class PuzzleComponent extends BaseComponent {
 
   _initLoadPage() {
     this._load = new LoadComponent({element: this._element});
+    setTimeout(()=> this._load.hide(), 1500);
   }
 
   _render() {
