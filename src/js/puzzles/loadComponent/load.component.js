@@ -29,17 +29,27 @@ export class LoadComponent extends BaseComponent {
   }
 
   _tick() {
-    setTimeout(onTick, 100);
+    let count = 0;
+    let timer = setInterval(onTick, 50);
 
     function onTick() {
-      const span = document.querySelectorAll('span');
+      const spans = [...document.querySelectorAll('span')];
+      for (let i = 0; i < spans.length; i++) {
+        spans[i].classList.add(`s${i}`);
+      }
 
-      span.forEach((item) => item.classList.add('fade'));
+      const span = document.querySelector(`.s${count}`);
+      span.classList.add('fade');
+      count++;
+      if (count === spans.length) {
+        complete();
+        return;
+      }
     }
 
-    // function complete() {
-    //   clearInterval(tick);
-    //   tick = null;
-    // }
+    function complete() {
+      clearInterval(timer);
+      timer = null;
+    }
   }
 }
