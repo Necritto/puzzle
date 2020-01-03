@@ -16,6 +16,9 @@ export class PuzzleComponent extends BaseComponent {
   _render() {
     this._element.innerHTML =
       `
+      <header class="header">
+        <h1 class="title">Puzzle</h1>
+      </header>
       <main class="main">
         <section class="description">
           <h2 class="description__title">Puzzle</h2>
@@ -30,6 +33,9 @@ export class PuzzleComponent extends BaseComponent {
             </ul>
           </div>
           <button class="arrow next">⇨</button>
+        </section>
+        <section class="work">
+          <div class="work-area"></div>
         </section>
         <section class="tooltip">
           <div class="tooltip__area">
@@ -47,6 +53,7 @@ export class PuzzleComponent extends BaseComponent {
 
   _initLoadPage() {
     this._load = new LoadComponent({ element: this._element.querySelector('.header') });
+    setTimeout(() => this._load.hide(), 1500);
   }
 
   _initPuzzle() {

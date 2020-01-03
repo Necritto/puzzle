@@ -3,17 +3,8 @@ import { BaseComponent } from '../../shared/component/base/base.component.js';
 export class LoadComponent extends BaseComponent {
   constructor({ element }) {
     super({ element });
-    this._render();
     this._renderChar();
     this._tick();
-  }
-
-  _render() {
-    this._element.innerHTML = `
-        <header class="header">
-          <h1 class="title">Puzzle</h1>
-        </header>
-    `;
   }
 
   _renderChar() {
