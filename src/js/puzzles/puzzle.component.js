@@ -22,17 +22,27 @@ export class PuzzleComponent extends BaseComponent {
       <main class="main">
         <section class="description">
           <h2 class="description__title">Puzzle</h2>
-          <p class="description_text">To assemble the picture,
+          <p class="description__text">To assemble the picture,
             drag puzzles from the storage to the work area</p>
         </section>
         <section class="carousel">
-          <button class="arrow prev">⇦</button>
+          <div class="arrow-wrap">
+            <button class="arrow prev">
+              <span></span>
+              <span></span>
+              <span></span>
+            </button>
+          </div>
           <div class="gallery">
             <ul class="images">
-              <li><img src="#" alt="#"></li>
+              <li><img src="/src/assets/Img/1.png" width="100px" alt="first img"></li>
             </ul>
           </div>
-          <button class="arrow next">⇨</button>
+          <button class="arrow next">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
         </section>
         <section class="work">
           <div class="work-area"></div>
