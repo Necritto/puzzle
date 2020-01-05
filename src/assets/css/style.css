@@ -38,6 +38,8 @@ body {
 .main {
   display: flex;
   flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
 }
 
 .description {
@@ -45,6 +47,7 @@ body {
   font-weight: bold;
   text-align: center;
   letter-spacing: 1px;
+  flex-basis: 100%;
 }
 
 .description__title {
@@ -58,8 +61,8 @@ body {
 }
 
 .arrow {
-  width: 30px;
-  height: 30px;
+  width: 20px;
+  height: 20px;
   margin: 30px;
   border: 1px solid blue;
 }
@@ -90,30 +93,38 @@ body {
 }
 
 .carousel {
-  border: 1px solid red;
   display: flex;
-  width: 285px;
+  width: 20vw;
   height: 60vh;
   justify-content: space-around;
   align-items: center;
 }
 
 .gallery {
-  border: 1px solid green;
   display: flex;
   align-items: flex-end;
 }
 
 .work {
-  border: 1px solid black;
+  width: 60vw;
+  height: 60vh;
+  display: flex;
+  justify-content: center;
+  background-color: #2d2d2c;
 }
 
-.tooltip {
-  border: 1px solid blue;
+.tooltip_lamp {
+  width: 40px;
 }
 
-.slider {
-  border: 1px solid white;
+.tooltip__src {
+  display: none;
+}
+
+.section-wrapper {
+  width: 90vw;
+  display: flex;
+  justify-content: space-between;
 }
 
 @keyframes arrow {
