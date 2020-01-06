@@ -23,7 +23,7 @@ export class LoadComponent extends BaseComponent {
     let timer = setInterval(onTick, 50);
 
     function onTick() {
-      const spans = [...document.querySelectorAll('span')];
+      const spans = [...document.querySelectorAll('.header span')];
       for (let i = 0; i < spans.length; i++) {
         spans[i].classList.add(`s${i}`);
       }

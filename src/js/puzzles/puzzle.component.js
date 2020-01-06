@@ -7,6 +7,7 @@ export class PuzzleComponent extends BaseComponent {
     super({ element });
     this._render();
     this._initLoadPage();
+    this._hideMainSection();
     this._initPuzzle();
     // this._initCarousel();
     // this._initSlider();
@@ -55,8 +56,21 @@ export class PuzzleComponent extends BaseComponent {
             </div>
           </section>
         </section>
+        <button class="play">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        Press me to start
+        </button>
       </main>
     `;
+  }
+
+  _hideMainSection() {
+    const main = this._element.querySelector('.main');
+    setTimeout(() => main.style.display = 'none', 0);
+    setTimeout(() => main.style.display = '', 1400);
   }
 
   _initLoadPage() {
