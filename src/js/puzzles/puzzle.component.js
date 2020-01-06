@@ -28,7 +28,7 @@ export class PuzzleComponent extends BaseComponent {
         </section>
         <section class="section-wrapper">
           <section class="carousel">
-            <div class="arrow-wrap">
+            <div class="arrow-wrap-prev">
               <button class="arrow prev">
                 <span></span>
                 <span></span>
@@ -37,21 +37,25 @@ export class PuzzleComponent extends BaseComponent {
             </div>
             <div class="gallery">
               <ul class="images">
-                <li><img src="/src/assets/Img/1.png" width="100px" alt="first img"></li>
+                <li><img src="/src/assets/Img/1.png" width="100px" alt="img"></li>
+                <li><img src="/src/assets/Img/2.png" width="100px" alt="img"></li>
+                <li><img src="/src/assets/Img/3.png" width="100px" alt="img"></li>
               </ul>
             </div>
-            <button class="arrow next">
-              <span></span>
-              <span></span>
-              <span></span>
-            </button>
+            <div class="arrow-wrap-next">
+              <button class="arrow next">
+                <span></span>
+                <span></span>
+                <span></span>
+              </button>
+            </div>
           </section>
           <section class="work">
             <div class="work-area"></div>
           </section>
           <section class="tooltip">
             <div class="tooltip__area">
-              <img class="tooltip_lamp" src="/src/assets/Img/lamp.svg" alt="tooltim img">
+              <img class="tooltip__lamp" src="/src/assets/Img/lamp.svg" alt="tooltim img">
               <img class="tooltip__src" src="/src/assets/Img/source.jpg" width="400px" alt="source">
             </div>
           </section>
