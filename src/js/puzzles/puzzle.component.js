@@ -1,6 +1,7 @@
 import { BaseComponent } from '../shared/component/base/base.component.js';
 import { LoadComponent } from '../puzzles/loadComponent/load.component.js';
 import { WorkAreaComponent } from '../puzzles/workAreaComponent/workArea.component.js';
+import { SliderComponent } from '../puzzles/sliderComponent/slider.component.js';
 
 export class PuzzleComponent extends BaseComponent {
   constructor({ element }) {
@@ -9,8 +10,7 @@ export class PuzzleComponent extends BaseComponent {
     this._initLoadPage();
     this._hideMainSection();
     this._initPuzzle();
-    // this._initCarousel();
-    // this._initSlider();
+    this._initSlider();
     // this._initSourceBtn();
   }
 
@@ -36,11 +36,7 @@ export class PuzzleComponent extends BaseComponent {
               </button>
             </div>
             <div class="gallery">
-              <ul class="images">
-                <li><img src="/src/assets/Img/1.png" width="100px" alt="img"></li>
-                <li><img src="/src/assets/Img/2.png" width="100px" alt="img"></li>
-                <li><img src="/src/assets/Img/3.png" width="100px" alt="img"></li>
-              </ul>
+              <ul class="images"></ul>
             </div>
             <div class="arrow-wrap-next">
               <button class="arrow next">
@@ -84,5 +80,9 @@ export class PuzzleComponent extends BaseComponent {
 
   _initPuzzle() {
     this._puzzle = new WorkAreaComponent({ element: this._element.querySelector('.work') });
+  }
+
+  _initSlider() {
+    this._slider = new SliderComponent({ element: this._element.querySelector('.carousel') });
   }
 }
