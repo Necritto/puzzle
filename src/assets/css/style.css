@@ -157,10 +157,17 @@ body {
   -webkit-box-align: end;
   -ms-flex-align: end;
   align-items: flex-end;
+  max-width: 60.6vw;
+  overflow: hidden;
 }
 
 .images {
   display: flex;
+}
+
+.images li {
+  margin-right: 10px;
+  margin-top: 25px;
 }
 
 .work {
