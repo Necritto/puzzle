@@ -2,6 +2,7 @@ import { BaseComponent } from '../shared/component/base/base.component.js';
 import { LoadComponent } from '../puzzles/loadComponent/load.component.js';
 import { WorkAreaComponent } from '../puzzles/workAreaComponent/workArea.component.js';
 import { SliderComponent } from '../puzzles/sliderComponent/slider.component.js';
+import { DragAndDropComponent } from '../puzzles/drag&dropComponent/dragAndDrop.component.js';
 
 export class PuzzleComponent extends BaseComponent {
   constructor({ element }) {
@@ -11,7 +12,7 @@ export class PuzzleComponent extends BaseComponent {
     this._hideMainSection();
     this._initPuzzle();
     this._initSlider();
-    // this._initSourceBtn();
+    this._initDragAndDrop();
   }
 
   _render() {
@@ -57,11 +58,11 @@ export class PuzzleComponent extends BaseComponent {
           </section>
         </section>
         <button class="play">
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        Press me to start
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          Press me to start
         </button>
       </main>
     `;
@@ -84,5 +85,9 @@ export class PuzzleComponent extends BaseComponent {
 
   _initSlider() {
     this._slider = new SliderComponent({ element: this._element.querySelector('.carousel') });
+  }
+
+  _initDragAndDrop() {
+    this._drag = new DragAndDropComponent({ element: this._element.querySelector('.section-wrapper') });
   }
 }
