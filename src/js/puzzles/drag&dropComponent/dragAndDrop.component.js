@@ -31,8 +31,37 @@ export class DragAndDropComponent extends BaseComponent {
         finishDrag();
       }
 
+      let currentDroppable = null;
+
       function onMouseMove(event) {
-        moveAt(event.clientX, event.clientY);
+        moveAt(event.pageX, event.pageY);
+
+        dragElement.hidden = true;
+        let elemBelow = document.elementFromPoint(event.clientX, event.clientY);
+        dragElement.hidden = false;
+
+        if (!elemBelow) return;
+
+        let droppableBelow = elemBelow.closest('.work');
+
+        if (currentDroppable !== droppableBelow) {
+
+          if (currentDroppable) {
+            leaveDroppable(currentDroppable);
+          }
+          currentDroppable = droppableBelow;
+          if (currentDroppable) {
+            enterDroppable(currentDroppable);
+          }
+        }
+      }
+
+      function enterDroppable(element) {
+        element.style.border = '2px solid #ffa802';
+      }
+
+      function leaveDroppable(element) {
+        element.style.border = '';
       }
 
       function startDrag(element, clientX, clientY) {
@@ -54,6 +83,8 @@ export class DragAndDropComponent extends BaseComponent {
         moveAt(clientX, clientY);
       }
 
+
+
       function finishDrag() {
         if (!isDragging) {
           return;
@@ -66,6 +97,7 @@ export class DragAndDropComponent extends BaseComponent {
 
         document.removeEventListener('mousemove', onMouseMove);
         dragElement.removeEventListener('mouseup', onMouseUp);
+
       }
 
       function moveAt(clientX, clientY) {
