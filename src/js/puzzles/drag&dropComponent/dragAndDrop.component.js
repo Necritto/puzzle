@@ -49,6 +49,7 @@ export class DragAndDropComponent extends BaseComponent {
         shiftY = clientY - element.getBoundingClientRect().top;
 
         element.style.position = 'fixed';
+        element.style.margin = '0px';
 
         moveAt(clientX, clientY);
       }
