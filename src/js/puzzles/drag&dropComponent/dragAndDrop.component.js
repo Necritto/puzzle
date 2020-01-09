@@ -58,18 +58,18 @@ export class DragAndDropComponent extends BaseComponent {
 
       function enterDroppable(element) {
         element.style.border = '2px solid #ffa802';
+        isDragging = true;
       }
 
       function leaveDroppable(element) {
         element.style.border = '';
+        isDragging = false;
       }
 
       function startDrag(element, clientX, clientY) {
         if (isDragging) {
           return;
         }
-
-        isDragging = true;
 
         document.addEventListener('mousemove', onMouseMove);
         element.addEventListener('mouseup', onMouseUp);
@@ -83,8 +83,6 @@ export class DragAndDropComponent extends BaseComponent {
         moveAt(clientX, clientY);
       }
 
-
-
       function finishDrag() {
         if (!isDragging) {
           return;
@@ -97,7 +95,6 @@ export class DragAndDropComponent extends BaseComponent {
 
         document.removeEventListener('mousemove', onMouseMove);
         dragElement.removeEventListener('mouseup', onMouseUp);
-
       }
 
       function moveAt(clientX, clientY) {
